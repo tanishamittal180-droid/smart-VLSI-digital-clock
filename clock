@@ -1,0 +1,418 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001701e3e0b80 .scope module, "clock_tb" "clock_tb" 2 3;
+ .timescale -9 -12;
+v000001701e458350_0 .net "alarm", 0 0, v000001701e456fb0_0;  1 drivers
+v000001701e458cb0_0 .var "alarm_enable", 0 0;
+v000001701e458d50_0 .var "alarm_hour", 4 0;
+v000001701e458710_0 .var "alarm_min", 5 0;
+v000001701e459cf0_0 .net "buzz", 0 0, L_000001701e3fbe10;  1 drivers
+v000001701e459390_0 .var "clk", 0 0;
+v000001701e458df0_0 .net "hour", 4 0, v000001701e456330_0;  1 drivers
+v000001701e459610_0 .net "min", 5 0, v000001701e456b50_0;  1 drivers
+v000001701e4587b0_0 .var "mode_12", 0 0;
+v000001701e459110_0 .var "reset", 0 0;
+v000001701e4583f0_0 .net "sec", 5 0, v000001701e4563d0_0;  1 drivers
+v000001701e458f30_0 .var "stopwatch_enable", 0 0;
+v000001701e458490_0 .net "sw_sec", 5 0, v000001701e456830_0;  1 drivers
+S_000001701e3f77b0 .scope module, "uut" "top" 2 25, 3 1 0, S_000001701e3e0b80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "alarm_enable";
+    .port_info 3 /INPUT 1 "mode_12";
+    .port_info 4 /INPUT 1 "stopwatch_enable";
+    .port_info 5 /INPUT 5 "alarm_hour";
+    .port_info 6 /INPUT 6 "alarm_min";
+    .port_info 7 /OUTPUT 1 "alarm";
+    .port_info 8 /OUTPUT 1 "buzz";
+    .port_info 9 /OUTPUT 6 "sec";
+    .port_info 10 /OUTPUT 6 "min";
+    .port_info 11 /OUTPUT 5 "hour";
+    .port_info 12 /OUTPUT 6 "sw_sec";
+v000001701e456970_0 .net "alarm", 0 0, v000001701e456fb0_0;  alias, 1 drivers
+v000001701e459f70_0 .net "alarm_enable", 0 0, v000001701e458cb0_0;  1 drivers
+v000001701e458850_0 .net "alarm_hour", 4 0, v000001701e458d50_0;  1 drivers
+v000001701e458c10_0 .net "alarm_min", 5 0, v000001701e458710_0;  1 drivers
+v000001701e4582b0_0 .net "buzz", 0 0, L_000001701e3fbe10;  alias, 1 drivers
+v000001701e459930_0 .net "clk", 0 0, v000001701e459390_0;  1 drivers
+v000001701e458fd0_0 .net "display_hour", 4 0, L_000001701e458670;  1 drivers
+v000001701e459250_0 .net "hour", 4 0, v000001701e456330_0;  alias, 1 drivers
+v000001701e458e90_0 .net "min", 5 0, v000001701e456b50_0;  alias, 1 drivers
+v000001701e459c50_0 .net "mode_12", 0 0, v000001701e4587b0_0;  1 drivers
+v000001701e459570_0 .net "reset", 0 0, v000001701e459110_0;  1 drivers
+v000001701e458a30_0 .net "sec", 5 0, v000001701e4563d0_0;  alias, 1 drivers
+v000001701e4588f0_0 .net "stopwatch_enable", 0 0, v000001701e458f30_0;  1 drivers
+v000001701e458210_0 .net "sw_sec", 5 0, v000001701e456830_0;  alias, 1 drivers
+v000001701e4594d0_0 .net "tick", 0 0, v000001701e3e0d10_0;  1 drivers
+S_000001701e3f7940 .scope module, "d1" "clk_divider" 3 28, 4 1 0, S_000001701e3f77b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /OUTPUT 1 "tick";
+P_000001701e3dcc30 .param/l "SIM_MODE" 0 4 2, +C4<00000000000000000000000000000001>;
+v000001701e3de810_0 .net "clk", 0 0, v000001701e459390_0;  alias, 1 drivers
+v000001701e3b2d50_0 .var "count", 31 0;
+v000001701e3f1f70_0 .net "reset", 0 0, v000001701e459110_0;  alias, 1 drivers
+v000001701e3e0d10_0 .var "tick", 0 0;
+E_000001701e3dccf0 .event posedge, v000001701e3de810_0;
+S_000001701e3ed820 .scope module, "d2" "time_counter" 3 34, 5 1 0, S_000001701e3f77b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "tick";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "mode_12";
+    .port_info 3 /OUTPUT 6 "sec";
+    .port_info 4 /OUTPUT 6 "min";
+    .port_info 5 /OUTPUT 5 "hour";
+    .port_info 6 /OUTPUT 5 "display_hour";
+v000001701e3e0db0_0 .net *"_ivl_0", 31 0, L_000001701e4585d0;  1 drivers
+v000001701e3ed9b0_0 .net *"_ivl_10", 4 0, L_000001701e4596b0;  1 drivers
+v000001701e456c90_0 .net *"_ivl_12", 4 0, L_000001701e459750;  1 drivers
+L_000001701e4a0088 .functor BUFT 1, C4<000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v000001701e456790_0 .net *"_ivl_3", 26 0, L_000001701e4a0088;  1 drivers
+L_000001701e4a00d0 .functor BUFT 1, C4<00000000000000000000000000001100>, C4<0>, C4<0>, C4<0>;
+v000001701e456d30_0 .net/2u *"_ivl_4", 31 0, L_000001701e4a00d0;  1 drivers
+v000001701e4560b0_0 .net *"_ivl_6", 0 0, L_000001701e4591b0;  1 drivers
+L_000001701e4a0118 .functor BUFT 1, C4<01100>, C4<0>, C4<0>, C4<0>;
+v000001701e456bf0_0 .net/2u *"_ivl_8", 4 0, L_000001701e4a0118;  1 drivers
+v000001701e456290_0 .net "display_hour", 4 0, L_000001701e458670;  alias, 1 drivers
+v000001701e456330_0 .var "hour", 4 0;
+v000001701e456b50_0 .var "min", 5 0;
+v000001701e456dd0_0 .net "mode_12", 0 0, v000001701e4587b0_0;  alias, 1 drivers
+v000001701e456e70_0 .net "reset", 0 0, v000001701e459110_0;  alias, 1 drivers
+v000001701e4563d0_0 .var "sec", 5 0;
+v000001701e456f10_0 .net "tick", 0 0, v000001701e3e0d10_0;  alias, 1 drivers
+E_000001701e3dcc70 .event posedge, v000001701e3e0d10_0;
+L_000001701e4585d0 .concat [ 5 27 0 0], v000001701e456330_0, L_000001701e4a0088;
+L_000001701e4591b0 .cmp/gt 32, L_000001701e4585d0, L_000001701e4a00d0;
+L_000001701e4596b0 .arith/sub 5, v000001701e456330_0, L_000001701e4a0118;
+L_000001701e459750 .functor MUXZ 5, v000001701e456330_0, L_000001701e4596b0, L_000001701e4591b0, C4<>;
+L_000001701e458670 .functor MUXZ 5, v000001701e456330_0, L_000001701e459750, v000001701e4587b0_0, C4<>;
+S_000001701e3eda50 .scope module, "d3" "alarm_comparator" 3 47, 6 1 0, S_000001701e3f77b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 5 "hour";
+    .port_info 1 /INPUT 6 "min";
+    .port_info 2 /INPUT 5 "alarm_hour";
+    .port_info 3 /INPUT 6 "alarm_min";
+    .port_info 4 /INPUT 1 "alarm_enable";
+    .port_info 5 /OUTPUT 1 "alarm";
+v000001701e456fb0_0 .var "alarm", 0 0;
+v000001701e456150_0 .net "alarm_enable", 0 0, v000001701e458cb0_0;  alias, 1 drivers
+v000001701e4561f0_0 .net "alarm_hour", 4 0, v000001701e458d50_0;  alias, 1 drivers
+v000001701e456ab0_0 .net "alarm_min", 5 0, v000001701e458710_0;  alias, 1 drivers
+v000001701e456470_0 .net "hour", 4 0, v000001701e456330_0;  alias, 1 drivers
+v000001701e456510_0 .net "min", 5 0, v000001701e456b50_0;  alias, 1 drivers
+E_000001701e3dc9b0/0 .event anyedge, v000001701e456330_0, v000001701e4561f0_0, v000001701e456b50_0, v000001701e456ab0_0;
+E_000001701e3dc9b0/1 .event anyedge, v000001701e456150_0;
+E_000001701e3dc9b0 .event/or E_000001701e3dc9b0/0, E_000001701e3dc9b0/1;
+S_000001701e3eaa70 .scope module, "d4" "buzzer" 3 61, 7 1 0, S_000001701e3f77b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "alarm";
+    .port_info 1 /OUTPUT 1 "buzz";
+L_000001701e3fbe10 .functor BUFZ 1, v000001701e456fb0_0, C4<0>, C4<0>, C4<0>;
+v000001701e456a10_0 .net "alarm", 0 0, v000001701e456fb0_0;  alias, 1 drivers
+v000001701e4565b0_0 .net "buzz", 0 0, L_000001701e3fbe10;  alias, 1 drivers
+S_000001701e3eac00 .scope module, "d5" "stopwatch" 3 68, 8 1 0, S_000001701e3f77b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "tick";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "enable";
+    .port_info 3 /OUTPUT 6 "sw_sec";
+v000001701e456650_0 .net "enable", 0 0, v000001701e458f30_0;  alias, 1 drivers
+v000001701e4566f0_0 .net "reset", 0 0, v000001701e459110_0;  alias, 1 drivers
+v000001701e456830_0 .var "sw_sec", 5 0;
+v000001701e4568d0_0 .net "tick", 0 0, v000001701e3e0d10_0;  alias, 1 drivers
+S_000001701e3f7620 .scope module, "seven_segment" "seven_segment" 9 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "digit";
+    .port_info 1 /OUTPUT 7 "seg";
+o000001701e406a88 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v000001701e4592f0_0 .net "digit", 3 0, o000001701e406a88;  0 drivers
+v000001701e458530_0 .var "seg", 6 0;
+E_000001701e3dd070 .event anyedge, v000001701e4592f0_0;
+    .scope S_000001701e3f7940;
+T_0 ;
+    %wait E_000001701e3dccf0;
+    %load/vec4 v000001701e3f1f70_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v000001701e3b2d50_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001701e3e0d10_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v000001701e3b2d50_0;
+    %cmpi/e 10, 0, 32;
+    %jmp/0xz  T_0.2, 4;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v000001701e3b2d50_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v000001701e3e0d10_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v000001701e3b2d50_0;
+    %addi 1, 0, 32;
+    %assign/vec4 v000001701e3b2d50_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001701e3e0d10_0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_000001701e3ed820;
+T_1 ;
+    %wait E_000001701e3dcc70;
+    %load/vec4 v000001701e456e70_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v000001701e4563d0_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v000001701e456b50_0, 0;
+    %pushi/vec4 0, 0, 5;
+    %assign/vec4 v000001701e456330_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v000001701e4563d0_0;
+    %pad/u 32;
+    %cmpi/e 59, 0, 32;
+    %jmp/0xz  T_1.2, 4;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v000001701e4563d0_0, 0;
+    %load/vec4 v000001701e456b50_0;
+    %pad/u 32;
+    %cmpi/e 59, 0, 32;
+    %jmp/0xz  T_1.4, 4;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v000001701e456b50_0, 0;
+    %load/vec4 v000001701e456330_0;
+    %pad/u 32;
+    %cmpi/e 23, 0, 32;
+    %jmp/0xz  T_1.6, 4;
+    %pushi/vec4 0, 0, 5;
+    %assign/vec4 v000001701e456330_0, 0;
+    %jmp T_1.7;
+T_1.6 ;
+    %load/vec4 v000001701e456330_0;
+    %addi 1, 0, 5;
+    %assign/vec4 v000001701e456330_0, 0;
+T_1.7 ;
+    %jmp T_1.5;
+T_1.4 ;
+    %load/vec4 v000001701e456b50_0;
+    %addi 1, 0, 6;
+    %assign/vec4 v000001701e456b50_0, 0;
+T_1.5 ;
+    %jmp T_1.3;
+T_1.2 ;
+    %load/vec4 v000001701e4563d0_0;
+    %addi 1, 0, 6;
+    %assign/vec4 v000001701e4563d0_0, 0;
+T_1.3 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001701e3eda50;
+T_2 ;
+    %wait E_000001701e3dc9b0;
+    %load/vec4 v000001701e456470_0;
+    %load/vec4 v000001701e4561f0_0;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %load/vec4 v000001701e456510_0;
+    %load/vec4 v000001701e456ab0_0;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %and;
+    %load/vec4 v000001701e456150_0;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001701e456fb0_0, 0, 1;
+    %jmp T_2.1;
+T_2.0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001701e456fb0_0, 0, 1;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2, $push;
+    .scope S_000001701e3eac00;
+T_3 ;
+    %wait E_000001701e3dcc70;
+    %load/vec4 v000001701e4566f0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v000001701e456830_0, 0;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/vec4 v000001701e456650_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.2, 8;
+    %load/vec4 v000001701e456830_0;
+    %pad/u 32;
+    %cmpi/e 59, 0, 32;
+    %jmp/0xz  T_3.4, 4;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v000001701e456830_0, 0;
+    %jmp T_3.5;
+T_3.4 ;
+    %load/vec4 v000001701e456830_0;
+    %addi 1, 0, 6;
+    %assign/vec4 v000001701e456830_0, 0;
+T_3.5 ;
+T_3.2 ;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_000001701e3e0b80;
+T_4 ;
+    %delay 5000, 0;
+    %load/vec4 v000001701e459390_0;
+    %inv;
+    %store/vec4 v000001701e459390_0, 0, 1;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_000001701e3e0b80;
+T_5 ;
+    %vpi_call 2 55 "$dumpfile", "clock.vcd" {0 0 0};
+    %vpi_call 2 57 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001701e3e0b80 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001701e459390_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001701e459110_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001701e458cb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001701e4587b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001701e458f30_0, 0, 1;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v000001701e458d50_0, 0, 5;
+    %pushi/vec4 1, 0, 6;
+    %store/vec4 v000001701e458710_0, 0, 6;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001701e459110_0, 0, 1;
+    %delay 5000000, 0;
+    %vpi_call 2 78 "$finish" {0 0 0};
+    %end;
+    .thread T_5;
+    .scope S_000001701e3e0b80;
+T_6 ;
+    %wait E_000001701e3dccf0;
+    %vpi_call 2 86 "$monitor", "Time=%d:%d:%d Stopwatch=%d Alarm=%b", v000001701e458df0_0, v000001701e459610_0, v000001701e4583f0_0, v000001701e458490_0, v000001701e458350_0 {0 0 0};
+    %jmp T_6;
+    .thread T_6;
+    .scope S_000001701e3f7620;
+T_7 ;
+    %wait E_000001701e3dd070;
+    %load/vec4 v000001701e4592f0_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.3, 6;
+    %dup/vec4;
+    %pushi/vec4 4, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.4, 6;
+    %dup/vec4;
+    %pushi/vec4 5, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.5, 6;
+    %dup/vec4;
+    %pushi/vec4 6, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.6, 6;
+    %dup/vec4;
+    %pushi/vec4 7, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.7, 6;
+    %dup/vec4;
+    %pushi/vec4 8, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.8, 6;
+    %dup/vec4;
+    %pushi/vec4 9, 0, 4;
+    %cmp/u;
+    %jmp/1 T_7.9, 6;
+    %pushi/vec4 127, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.0 ;
+    %pushi/vec4 64, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.1 ;
+    %pushi/vec4 121, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.2 ;
+    %pushi/vec4 36, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.3 ;
+    %pushi/vec4 48, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.4 ;
+    %pushi/vec4 25, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.5 ;
+    %pushi/vec4 18, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.6 ;
+    %pushi/vec4 2, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.7 ;
+    %pushi/vec4 120, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.8 ;
+    %pushi/vec4 0, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.9 ;
+    %pushi/vec4 16, 0, 7;
+    %store/vec4 v000001701e458530_0, 0, 7;
+    %jmp T_7.11;
+T_7.11 ;
+    %pop/vec4 1;
+    %jmp T_7;
+    .thread T_7, $push;
+# The file index is used to find the file name in the following table.
+:file_names 10;
+    "N/A";
+    "<interactive>";
+    "tb/clock_tb.v";
+    "rtl/top.v";
+    "rtl/clock_divider.v";
+    "rtl/time_counter.v";
+    "rtl/alarm_comparator.v";
+    "rtl/buzzer.v";
+    "rtl/stopwatch.v";
+    "rtl/seven_segment.v";
