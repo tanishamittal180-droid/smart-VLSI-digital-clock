@@ -6,6 +6,7 @@ AI Smart VLSI Digital Clock is an advanced digital clock system built using Veri
 
 The system combines hardware design concepts with software and AI integration to create an industry-style project suitable for FPGA learning, internships, GitHub portfolios, and placement preparation.
 
+
 ---
 
 ## Features
