@@ -319,7 +319,6 @@ Stopwatch:
 <img width="1366" height="768" alt="Screenshot 2026-06-22 105519" src="https://github.com/user-attachments/assets/21881fda-ef88-4e34-afb7-5dfe52c473ca" />
 <img width="1366" height="768" alt="Screenshot 2026-06-22 105532" src="https://github.com/user-attachments/assets/5d017973-cef7-4510-a3f4-91606ba24ee5" />
 <img width="1366" height="768" alt="Screenshot 2026-06-22 105546" src="https://github.com/user-attachments/assets/f65fc9ba-e572-4d43-a28d-6f0696739726" />
-<img width="1366" height="768" alt="Screenshot 2026-06-22 105546" src="https://github.com/user-attachments/assets/2ff95073-d745-4564-8e16-cca2d0094758" />
 <img width="1366" height="768" alt="Screenshot 2026-06-22 105601" src="https://github.com/user-attachments/assets/e97eeb28-d49f-4264-9724-5c798e9b5b73" />
 <img width="1366" height="768" alt="Screenshot 2026-06-22 105508" src="https://github.com/user-attachments/assets/fe12d78a-e639-41b3-964c-ead7959cc840" />
 
